@@ -1,3 +1,12 @@
+/**
+ * Block edit.
+ *
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2022, Justin Tadlock
+ * @link      https://github.com/x3p0-dev/x3p0-comment-parent-link
+ * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
+
 // External dependencies.
 import classnames from 'classnames';
 
@@ -13,18 +22,21 @@ import { PanelBody, TextControl, RangeControl } from '@wordpress/components';
 
 import { __ } from '@wordpress/i18n';
 
+/**
+ * Exports the block edit function.
+ *
+ * @since 1.0.0
+ */
 export default function Edit( {
-	attributes,
-	setAttributes,
-} ) {
-	let {
+	attributes: {
 		textAlign,
 		depth,
 		text,
 		before,
 		after
-	} = attributes;
-
+	},
+	setAttributes,
+} ) {
 	const blockProps = useBlockProps( {
 		className: classnames( {
 			[ `has-text-align-${ textAlign }` ]: textAlign,
@@ -97,7 +109,7 @@ export default function Edit( {
 					href="#comment-parent-pseudo-link"
 					onClick={ ( event ) => event.preventDefault() }
 				>
-					{ attributes.text.replace(
+					{ text.replace(
 						'%s',
 						__( 'Comment Author', 'x3p0-comment-parent-link' )
 					) }

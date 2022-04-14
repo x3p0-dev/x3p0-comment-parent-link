@@ -1,5 +1,5 @@
 /**
- * Block save.
+ * Block icon.
  *
  * @author    Justin Tadlock <justintadlock@gmail.com>
  * @copyright Copyright (c) 2022, Justin Tadlock
@@ -7,11 +7,9 @@
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-/**
- * Exports the block save function.
- *
- * @since 1.0.0
- */
-export default function save() {
-	return null;
-}
+// WP dependencies.
+import { Icon, commentReplyLink } from '@wordpress/icons';
+
+export default (
+	<Icon icon={ commentReplyLink } />
+);
